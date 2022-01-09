@@ -16,51 +16,54 @@ public class Main {
         boolean hBoolean = false;
 
     //task2
-        float w1 = 78.2f;
-        float w2 = 82.7f;
-        float sum = w1+w2;
-        float diff = w2%w1;
+        float weightFirst = 78.2f;
+        float weightSecond = 82.7f;
+        float sum = weightFirst+weightSecond;
+        float diff = weightSecond%weightFirst;
         System.out.println("Общий вес бойцов: "+sum+" kg");
         System.out.println("Разница: "+ diff + "kg");
 
     //task3
-        byte wBanana = 80;
-        byte wMilkPer100Ml = 105;
-        byte wPlombir = 100;
-        byte wEgg = 70;
-        int totalWeight = 5 * wBanana + 200/100 * wMilkPer100Ml + 2 * wPlombir + 4 * wEgg;
-        var totalWeightInKg = totalWeight / 1000;
+        byte weightBanana = 80;
+        byte weightMilkPer100Ml = 105;
+        byte weightIceCream = 100;
+        byte weightEgg = 70;
+        int totalWeight = 5 * weightBanana + 200 / 100 * weightMilkPer100Ml + 2 * weightIceCream + 4 * weightEgg;
+        int totalWeightInKg = totalWeight / 1000;
         System.out.println("Итоговое значение в кг: " + totalWeightInKg);
 
     //task4
         byte targetInKg = 7;
-        short mode1 = 250;
-        short mode2 = 500;
-        int daysMode1 = targetInKg * 1000 / mode1;
-        int daysMode2 = targetInKg * 1000 / mode2;
-        int daysAverage = targetInKg * 1000 / ((mode1+mode2) / 2) + 1; /*формулировку "в среднем" трактую
-        как среднее арифметическое между экстремумами (250 и 500) с округлением дней до целого в большую сторону*/
+        short minInDay = 250;
+        short maxInDay = 500;
+        int grInKg = 1000;
+        int daysMax = targetInKg * grInKg / minInDay;
+        int daysMin = targetInKg * grInKg/ maxInDay;
+        //int daysAverage = targetInKg * grInKg / ((minInDay+maxInDay) / 2) + 1;
+        /*формулировку "в среднем" трактую как среднее арифметическое между экстремумами (250 и 500) с округлением дней до целого в большую сторону*/
+        int daysAverage = (daysMax + daysMin) / 2;
 
-        System.out.println("будет худеть дней в режиме 250г/д: "+ daysMode1);
-        System.out.println("будет худеть дней в режиме 500г/д: "+ daysMode2);
+        System.out.println("будет худеть дней в режиме 250г/д: "+ daysMax);
+        System.out.println("будет худеть дней в режиме 500г/д: "+ daysMin);
         System.out.println("будет худеть дней в режиме 250-500 г/д: "+ daysAverage);
 
     //task5
-        int zpM = 67_760;
-        int zpD = 83_690;
-        int zpK = 76_230;
+        int salaryMasha = 67_760;
+        int salaryDen = 83_690;
+        int salaryKris = 76_230;
 
-        var zpM2 = zpM * 1.1;
-        float zpD2 = zpD * 1.1f;
-        var zpK2 = zpK * 1.1;
+        int salaryMashaAfter = salaryMasha + salaryMasha / 10;
+        int salaryDenAfter = salaryDen + salaryDen / 10;
+        int salaryKrisAfter = salaryKris + salaryKris / 10;
 
-        var diffM = (zpM2 - zpM) * 12;
-        var diffD = (zpD2 - zpD) * 12;
-        var diffK = (zpK2 - zpK) * 12;
+        int months = 12;
+        int diffM = (salaryMashaAfter - salaryMasha) * months;
+        int diffD = (salaryDenAfter - salaryDen) * months;
+        int diffK = (salaryKrisAfter - salaryKris) * months;
 
-        System.out.println("Маша теперь получает " +zpM2 + " рублей. Годовой доход вырос на " + diffM + " рублей");
-        System.out.println("Денис теперь получает " +zpD2 + " рублей. Годовой доход вырос на " + diffD + " рублей");
-        System.out.println("Крис теперь получает " +zpK2 + " рублей. Годовой доход вырос на " + diffK + " рублей");
+        System.out.println("Маша теперь получает " +salaryMashaAfter + " рублей. Годовой доход вырос на " + diffM + " рублей");
+        System.out.println("Денис теперь получает " +salaryDenAfter + " рублей. Годовой доход вырос на " + diffD + " рублей");
+        System.out.println("Крис теперь получает " +salaryKrisAfter + " рублей. Годовой доход вырос на " + diffK + " рублей");
 
     }
 }
